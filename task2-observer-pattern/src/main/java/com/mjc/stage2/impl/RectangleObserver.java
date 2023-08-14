@@ -8,19 +8,16 @@ import com.mjc.stage2.repository.RectangleRepository;
 import com.mjc.stage2.warehouse.RectangleWarehouse;
 
 public class RectangleObserver implements Observer {
+
+
     @Override
     public void handleEvent(RectangleEvent event) {
         Rectangle rectangle = event.getSource();
-        double sideA = rectangle.getSideA();
-        double sideB = rectangle.getSideB();
-
-        RectangleValues rectangleValues =
-                new RectangleValues(sideA * sideB, 2 * (sideA + sideB));
-
-        RectangleRepository rectangleRepository = RectangleRepository.getInstance();
-        rectangleRepository.add(rectangle);
+        double square = rectangle.getSideA() * rectangle.getSideB();
+        double perimeter = 2 * (rectangle.getSideA() + rectangle.getSideB());
 
         RectangleWarehouse rectangleWarehouse = RectangleWarehouse.getInstance();
-        rectangleWarehouse.put(rectangle.getId(), rectangleValues);
+
+        rectangleWarehouse.put(rectangle.getId(), new RectangleValues(square, perimeter));
     }
 }
