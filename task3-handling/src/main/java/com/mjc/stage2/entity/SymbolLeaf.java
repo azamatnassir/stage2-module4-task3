@@ -28,6 +28,4 @@ public class SymbolLeaf extends AbstractTextComponent {
     public int getSize() {
         return 1;
     }
-
-    // Write your code here!
 }

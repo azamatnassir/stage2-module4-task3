@@ -6,7 +6,6 @@ import java.util.List;
 public class TextComponent extends AbstractTextComponent {
     protected List<AbstractTextComponent> componentList = new ArrayList<>();
     private int size;
-
     public TextComponent(TextComponentType componentType) {
         super(componentType);
     }
@@ -30,7 +29,7 @@ public class TextComponent extends AbstractTextComponent {
     @Override
     public void remove(AbstractTextComponent textComponent) {
         componentList.remove(textComponent);
-        size += textComponent.getSize();
+        size -= textComponent.getSize();
     }
 
     @Override
