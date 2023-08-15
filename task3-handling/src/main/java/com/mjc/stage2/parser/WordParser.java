@@ -7,10 +7,11 @@ import com.mjc.stage2.entity.TextComponentType;
 public class WordParser extends AbstractTextParser {
     @Override
     public void parse(AbstractTextComponent abstractTextComponent, String string) {
+        System.out.println("word parser");
         char[] arr = string.toCharArray();
 
-        for (char c : arr) {
-            abstractTextComponent.add(new SymbolLeaf(TextComponentType.WORD, c));
+        for (char x : arr) {
+            abstractTextComponent.add(new SymbolLeaf(x, TextComponentType.WORD));
         }
     }
 }

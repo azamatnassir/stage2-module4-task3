@@ -5,20 +5,21 @@ import java.util.List;
 
 public class TextComponent extends AbstractTextComponent {
     protected List<AbstractTextComponent> componentList = new ArrayList<>();
-    private int size = componentList.size();
+    private int size = 0;
+
     public TextComponent(TextComponentType componentType) {
         super(componentType);
     }
 
     @Override
     public String operation() {
-        StringBuilder builder = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
 
-        for (AbstractTextComponent abstractTextComponent: componentList){
-            builder.append(abstractTextComponent.operation());
+        for (AbstractTextComponent abstractTextComponent : componentList) {
+            sb.append(abstractTextComponent.operation());
         }
 
-        return builder.toString();
+        return sb.toString();
     }
 
     @Override

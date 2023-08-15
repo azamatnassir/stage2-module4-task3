@@ -4,9 +4,9 @@ public class SymbolLeaf extends AbstractTextComponent {
 
     private char value;
 
-    public SymbolLeaf(TextComponentType componentType, char c) {
-        super(componentType);
-        this.value = c;
+    public SymbolLeaf(char value, TextComponentType textComponentType) {
+        super(textComponentType);
+        this.value = value;
     }
 
     @Override
@@ -26,6 +26,6 @@ public class SymbolLeaf extends AbstractTextComponent {
 
     @Override
     public int getSize() {
-        return 1;
+        throw new UnsupportedOperationException();
     }
 }

@@ -13,8 +13,8 @@ public class LexemeParser extends AbstractTextParser {
     public void parse(AbstractTextComponent abstractTextComponent, String string) {
         char[] arr = string.toCharArray();
 
-        for (char c : arr) {
-            abstractTextComponent.add(new SymbolLeaf(TextComponentType.WORD, c));
+        for (char x : arr) {
+            abstractTextComponent.add(new SymbolLeaf(x, TextComponentType.WORD));
         }
     }
 }
